@@ -1,0 +1,155 @@
+[
+    {
+      "_id": "1",
+      "brand_name": "Yellow",
+      "rating": 4.7,
+      "description": "Premium winter clothing collection for men, women, and kids.",
+      "brand_logo": "https://i.ibb.co.com/q1x4Lpm/yellow-logo-transparent-8012a156-fc50-42b6-9a8f-2e4888e8dcdf.jpg",
+      "coupons": [
+        {
+          "coupon-code": "WINTER10",
+          "description": "10% off on all winter jackets.",
+          "expiry-date": "2024-12-31",
+          "condition": "Minimum purchase of 2000 BDT",
+          "coupon_type": "Percentage"
+        }
+      ],
+      "shop-Link": "https://yellow.com.bd",
+      "category": "Clothing",
+      "isSaleOn": true
+    },
+    {
+      "_id": "2",
+      "brand_name": "Artisan",
+      "rating": 4.5,
+      "description": "Trendy winter wear including shawls and sweaters.",
+      "brand_logo": "https://i.ibb.co.com/93YyqC1/logo-2-white.png",
+      "coupons": [
+        {
+          "coupon-code": "SHAWL20",
+          "description": "20% off on all shawls.",
+          "expiry-date": "2024-12-25",
+          "condition": "No minimum purchase required",
+          "coupon_type": "Percentage"
+        }
+      ],
+      "shop-Link": "https://artisanbd.com",
+      "category": "Clothing",
+      "isSaleOn": true
+    },
+    {
+      "_id": "3",
+      "brand_name": "Cats Eye",
+      "rating": 4.6,
+      "description": "Sophisticated winter wear for all occasions.",
+      "brand_logo": "https://i.ibb.co.com/y6VybgQ/logo-1.png",
+      "coupons": [
+        {
+          "coupon-code": "COLD15",
+          "description": "15% off on winter collections.",
+          "expiry-date": "2024-12-20",
+          "condition": "Applicable for online orders only",
+          "coupon_type": "Percentage"
+        }
+      ],
+      "shop-Link": "https://catseye.com.bd",
+      "category": "Clothing",
+      "isSaleOn": true
+    },
+    {
+      "_id": "4",
+      "brand_name": "Le Reve",
+      "rating": 4.4,
+      "description": "Stylish and affordable winter outfits.",
+      "brand_logo": "https://i.ibb.co.com/48RM5VT/bottom-logo.png",
+      "coupons": [
+        {
+          "coupon-code": "WARM30",
+          "description": "Flat 30% off on all sweaters.",
+          "expiry-date": "2024-12-15",
+          "condition": "Applicable for in-store purchases",
+          "coupon_type": "Flat"
+        }
+      ],
+      "shop-Link": "https://lereve.com.bd",
+      "category": "Clothing",
+      "isSaleOn": true
+    },
+    {
+      "_id": "5",
+      "brand_name": "Aarong",
+      "rating": 4.8,
+      "description": "Authentic Bangladeshi hand-crafted winter clothes.",
+      "brand_logo": "https://i.ibb.co.com/bRbGfSY/aarong-logo.webp",
+      "coupons": [
+        {
+          "coupon-code": "HERITAGE10",
+          "description": "10% off on exclusive winter shawls.",
+          "expiry-date": "2024-12-31",
+          "condition": "Available for loyalty members only",
+          "coupon_type": "Percentage"
+        }
+      ],
+      "shop-Link": "https://aarong.com",
+      "category": "Clothing",
+      "isSaleOn": true
+    },
+    {
+      "_id": "6",
+      "brand_name": "Ecstasy",
+      "rating": 4.3,
+      "description": "Modern and sleek winter collections.",
+      "brand_logo": "https://i.ibb.co.com/SXbsNV0/logo.png",
+      "coupons": [
+        {
+          "coupon-code": "FROSTY25",
+          "description": "25% off on jackets and hoodies.",
+          "expiry-date": "2024-12-10",
+          "condition": "Limited to first 100 customers",
+          "coupon_type": "Percentage"
+        }
+      ],
+      "shop-Link": "https://ecstasybd.com",
+      "category": "Clothing",
+      "isSaleOn": true
+    },
+    {
+      "_id": "7",
+      "brand_name": "Texmart",
+      "rating": 4.2,
+      "description": "Affordable winter clothes for daily wear.",
+      "brand_logo": "https://i.ibb.co.com/Qm2g3vs/Texmat.webp",
+      "coupons": [
+        {
+          "coupon-code": "BUNDLE30",
+          "description": "30% off on combo purchases.",
+          "expiry-date": "2024-12-20",
+          "condition": "Purchase at least 3 items",
+          "coupon_type": "Flat"
+        }
+      ],
+      "shop-Link": "https://texmartbd.com",
+      "category": "Clothing",
+      "isSaleOn": false
+    },
+    {
+      "_id": "8",
+      "brand_name": "Richman",
+      "rating": 4.6,
+      "description": "Elegant winter fashion for men.",
+      "brand_logo": "https://i.ibb.co.com/pKF65TP/Richman.webp",
+      "coupons": [
+        {
+          "coupon-code": "SUITUP15",
+          "description": "15% off on winter suits.",
+          "expiry-date": "2024-12-18",
+          "condition": "Available for online orders only",
+          "coupon_type": "Percentage"
+        }
+      ],
+      "shop-Link": "https://richmanbd.com",
+      "category": "Clothing",
+      "isSaleOn": true
+    }
+  ]
+  
