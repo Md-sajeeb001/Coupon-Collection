@@ -7,9 +7,9 @@
       "brand_logo": "https://i.ibb.co.com/q1x4Lpm/yellow-logo-transparent-8012a156-fc50-42b6-9a8f-2e4888e8dcdf.jpg",
       "coupons": [
         {
-          "coupon-code": "WINTER10",
+          "coupon_code": "WINTER10",
           "description": "10% off on all winter jackets.",
-          "expiry-date": "2024-12-31",
+          "expiry_date": "2024-12-31",
           "condition": "Minimum purchase of 2000 BDT",
           "coupon_type": "Percentage"
         }
@@ -23,12 +23,12 @@
       "brand_name": "Artisan",
       "rating": 4.5,
       "description": "Trendy winter wear including shawls and sweaters.",
-      "brand_logo": "https://i.ibb.co.com/93YyqC1/logo-2-white.png",
+      "brand_logo": "https://i.ibb.co.com/sqkzZ1H/download.jpg",
       "coupons": [
         {
-          "coupon-code": "SHAWL20",
+          "coupon_code": "SHAWL20",
           "description": "20% off on all shawls.",
-          "expiry-date": "2024-12-25",
+          "expiry_date": "2024-12-25",
           "condition": "No minimum purchase required",
           "coupon_type": "Percentage"
         }
@@ -45,16 +45,16 @@
       "brand_logo": "https://i.ibb.co.com/y6VybgQ/logo-1.png",
       "coupons": [
         {
-          "coupon-code": "COLD15",
+          "coupon_code": "COLD15",
           "description": "15% off on winter collections.",
-          "expiry-date": "2024-12-20",
+          "expiry_date": "2024-12-20",
           "condition": "Applicable for online orders only",
           "coupon_type": "Percentage"
         }
       ],
       "shop-Link": "https://catseye.com.bd",
       "category": "Clothing",
-      "isSaleOn": true
+      "isSaleOn": false
     },
     {
       "_id": "4",
@@ -64,9 +64,9 @@
       "brand_logo": "https://i.ibb.co.com/48RM5VT/bottom-logo.png",
       "coupons": [
         {
-          "coupon-code": "WARM30",
+          "coupon_code": "WARM30",
           "description": "Flat 30% off on all sweaters.",
-          "expiry-date": "2024-12-15",
+          "expiry_date": "2024-12-15",
           "condition": "Applicable for in-store purchases",
           "coupon_type": "Flat"
         }
@@ -83,16 +83,16 @@
       "brand_logo": "https://i.ibb.co.com/bRbGfSY/aarong-logo.webp",
       "coupons": [
         {
-          "coupon-code": "HERITAGE10",
+          "coupon_code": "HERITAGE10",
           "description": "10% off on exclusive winter shawls.",
-          "expiry-date": "2024-12-31",
+          "expiry_date": "2024-12-31",
           "condition": "Available for loyalty members only",
           "coupon_type": "Percentage"
         }
       ],
       "shop-Link": "https://aarong.com",
       "category": "Clothing",
-      "isSaleOn": true
+      "isSaleOn": false
     },
     {
       "_id": "6",
@@ -102,9 +102,9 @@
       "brand_logo": "https://i.ibb.co.com/SXbsNV0/logo.png",
       "coupons": [
         {
-          "coupon-code": "FROSTY25",
+          "coupon_code": "FROSTY25",
           "description": "25% off on jackets and hoodies.",
-          "expiry-date": "2024-12-10",
+          "expiry_date": "2024-12-10",
           "condition": "Limited to first 100 customers",
           "coupon_type": "Percentage"
         }
@@ -121,9 +121,9 @@
       "brand_logo": "https://i.ibb.co.com/Qm2g3vs/Texmat.webp",
       "coupons": [
         {
-          "coupon-code": "BUNDLE30",
+          "coupon_code": "BUNDLE30",
           "description": "30% off on combo purchases.",
-          "expiry-date": "2024-12-20",
+          "expiry_date": "2024-12-20",
           "condition": "Purchase at least 3 items",
           "coupon_type": "Flat"
         }
@@ -140,9 +140,9 @@
       "brand_logo": "https://i.ibb.co.com/pKF65TP/Richman.webp",
       "coupons": [
         {
-          "coupon-code": "SUITUP15",
+          "coupon_code": "SUITUP15",
           "description": "15% off on winter suits.",
-          "expiry-date": "2024-12-18",
+          "expiry_date": "2024-12-18",
           "condition": "Available for online orders only",
           "coupon_type": "Percentage"
         }
