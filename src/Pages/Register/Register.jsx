@@ -2,11 +2,14 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const { createUser, google, updateUserProfile } = useContext(AuthContext);
   const [success, setSuccess] = useState(false);
   const [err, setError] = useState("");
+  const [showPass, setShowPass] = useState(false);
+
   const navigate = useNavigate();
 
   const handelSignUpSubmit = (e) => {
@@ -17,6 +20,7 @@ const Register = () => {
     const password = form.get("password");
     const name = form.get("name");
     const photo = form.get("photo");
+    const terms = form.get("terms")
     const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     console.log(email, password, name);
 
@@ -28,6 +32,16 @@ const Register = () => {
       toast.error(
         "password should be At least one upper case one lower case, and numbers"
       );
+      return;
+    }
+
+    if(password < 6){
+      toast.error('password must be at least 6 character');
+      return;
+    }
+
+    if(!terms){
+      toast.error('accept our terms and condition')
       return;
     }
 
@@ -109,27 +123,34 @@ const Register = () => {
           />
         </div>
 
-        <div className="form-control">
+        <div className="form-control relative">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
           <input
             name="password"
-            type="password"
+            type={showPass ? "text" : "password"}
             placeholder="password"
             className="input input-bordered"
             required
           />
+          <Link
+            onClick={() => setShowPass(!showPass)}
+            className="absolute right-8 top-[50px] text-lg"
+          >
+            {showPass ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
+          </Link>
         </div>
 
-        <label className="label">
-          <Link className="label-text-alt link link-hover text-[16px]">
-            Forgot password?
-          </Link>
-        </label>
+        <div className="form-control">
+          <label className="label justify-start gap-3 cursor-pointer">
+            <input type="checkbox" name="terms" className="checkbox" />
+            <span className="label-text">accept our terms and condition</span>
+          </label>
+        </div>
 
         <p>
-          Already Have An Account? Please
+          Already Have An Account? Please{" "}
           <Link className="text-red-500" to="/login">
             log in
           </Link>

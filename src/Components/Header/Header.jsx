@@ -63,36 +63,63 @@ const Header = () => {
           <NavLink className="text-black font-semibold" to="/brands">
             Brands{" "}
           </NavLink>
-          <NavLink className="text-black font-semibold" to="">
+          <NavLink className="text-black font-semibold" to="/myprofile">
             My-Profile
           </NavLink>
         </ul>
       </div>
+
       <div className="navbar-end gap-4 mr-6">
-        {user ? (
-          <div>
-            <Link onClick={handelLogOut} className="btn">
-              Log out
-            </Link>
-          </div>
-        ) : (
-          <div className="space-x-10">
-            <Link
-              to="/login"
-              className="btn px-8 bg-[#EB6440] hover:bg-[#497174] text-white border-[#EB6440] border-2-[[#EB6440]]  hover:text-black  hover:border-[#EB6440] text-lg font-semibold "
+        <div className="space-x-10">
+          <Link
+            to="/login"
+            className="btn px-8 bg-[#EB6440] hover:bg-[#497174] text-white border-[#EB6440] border-2-[[#EB6440]]  hover:text-black  hover:border-[#EB6440] text-lg font-semibold "
+          >
+            Login
+          </Link>
+          <Link
+            to="/Register"
+            className="btn px-8 bg-[#EB6440] hover:bg-[#497174] text-white border-[#EB6440] border-2-[[#EB6440]]  hover:text-black  hover:border-[#EB6440] text-lg font-semibold "
+          >
+            Register
+          </Link>
+        </div>
+      </div>
+
+      <div>
+        {user && (
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
             >
-              Login
-            </Link>
-            <Link
-              to="/Register"
-              className="btn px-8 bg-[#EB6440] hover:bg-[#497174] text-white border-[#EB6440] border-2-[[#EB6440]]  hover:text-black  hover:border-[#EB6440] text-lg font-semibold "
+              <div className="w-10 rounded-full">
+                <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-              Register
-            </Link>
+              <li>
+                <Link to="/myprofile" className="justify-between">
+                  Profile
+                  <span className="badge">New</span>
+                </Link>
+              </li>
+              <li>
+                <a>Settings</a>
+              </li>
+              <li>
+                <Link onClick={handelLogOut}>Logout</Link>
+              </li>
+            </ul>
           </div>
         )}
       </div>
-      <div>
+
+      {/* <div>
         {user && user?.email ? (
           <div>
             <img className="w-12 h-12 rounded-full" src={user.photoURL} />
@@ -101,7 +128,7 @@ const Header = () => {
         ) : (
           ""
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
