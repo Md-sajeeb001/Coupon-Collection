@@ -17,7 +17,7 @@ const Header = () => {
   };
 
   return (
-    <div className="navbar  bg-white border-b py-6 px-14">
+    <div className="navbar  bg-white border-b py-6 lg:px-14">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,14 +46,14 @@ const Header = () => {
             <NavLink className="text-black font-semibold" to="/brands">
               Brands{" "}
             </NavLink>
-            <NavLink className="text-black font-semibold" to="">
+            <NavLink className="text-black font-semibold" to="/myprofile">
               My-Profile
             </NavLink>
           </ul>
         </div>
-        <div>
+        <Link to="/">
           <img className="w-24 h-10 " src={logo} alt="" />
-        </div>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal text-white text-sm font-semibold px-1 gap-10">
@@ -70,20 +70,18 @@ const Header = () => {
       </div>
 
       <div className="navbar-end gap-4 mr-6">
-        <div className="space-x-10">
-          <Link
-            to="/login"
-            className="btn px-8 bg-[#EB6440] hover:bg-[#497174] text-white border-[#EB6440] border-2-[[#EB6440]]  hover:text-black  hover:border-[#EB6440] text-lg font-semibold "
-          >
-            Login
-          </Link>
-          <Link
-            to="/Register"
-            className="btn px-8 bg-[#EB6440] hover:bg-[#497174] text-white border-[#EB6440] border-2-[[#EB6440]]  hover:text-black  hover:border-[#EB6440] text-lg font-semibold "
-          >
-            Register
-          </Link>
-        </div>
+        {user ? (
+          <Link className="btn bg-sky-300 hover:bg-sky-950 hover:text-white text-black" onClick={handelLogOut}>Logout</Link>
+        ) : (
+          <div className="sm:space-x-10 space-x-4">
+            <Link to="/login" className="btn lg:px-8 bg-sky-300 hover:bg-sky-950 hover:text-white text-black">
+              Login
+            </Link>
+            <Link to="/Register" className="btn lg:px-8 bg-white hover:bg-sky-950 hover:text-white">
+              Register
+            </Link>
+          </div>
+        )}
       </div>
 
       <div>
@@ -109,26 +107,12 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <a>Settings</a>
-              </li>
-              <li>
                 <Link onClick={handelLogOut}>Logout</Link>
               </li>
             </ul>
           </div>
         )}
       </div>
-
-      {/* <div>
-        {user && user?.email ? (
-          <div>
-            <img className="w-12 h-12 rounded-full" src={user.photoURL} />
-            <p>{user.displayName}</p>
-          </div>
-        ) : (
-          ""
-        )}
-      </div> */}
     </div>
   );
 };

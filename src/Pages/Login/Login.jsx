@@ -1,32 +1,69 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../../Providers/AuthProviders";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from "../../Providers/AuthProviders";
+import { toast } from "react-toastify";
+import googleImg from "../../assets/google.png";
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signUpUser, google } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [err, setError] = useState("");
+  const navigate = useNavigate();
 
   const handelSignUp = (e) => {
     e.preventDefault();
-    const form = new FormData(e.target);
-    const email = form.get("email");
-    const password = form.get("password");
 
-    signInUser(email, password)
+    const formData = new FormData(e.target);
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    if(password < 6){
+      toast.error("password must be at least 6 character")
+    }
+
+    // reset state
+    setSuccess(false);
+    setError("");
+
+    signUpUser(email, password)
       .then((result) => {
         console.log(result);
+        setSuccess(result);
+        if (success) {
+          navigate("/");
+        }
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
+        setError(error.message);
+        if (err) {
+          return toast.error("register now");
+        }
+      });
+
+    console.log(email, password);
+  };
+
+  const handelGoogleSubmit = () => {
+    google()
+      .then((result) => {
+        console.log(result);
+        setSuccess(result);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+        setError(err.message);
       });
   };
 
   return (
     <div className="card bg-base-100 w-full max-w-xl mx-auto my-10 shrink-0 shadow-2xl">
       <h1 className="text-5xl text-center pt-5 font-bold">Login now!</h1>
-      <form onClick={handelSignUp} className="card-body">
+      <form onSubmit={handelSignUp} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -62,16 +99,22 @@ const Login = () => {
             </a>
           </label>
         </div>
-
-        <p>
+        <div className="form-control mt-6">
+          <button className="btn bg-sky-300 hover:bg-sky-950 hover:text-white text-black">Log in </button>
+        </div>
+        <div className="divider">OR</div>
+        <div className="form-control mt-6">
+          <button onClick={handelGoogleSubmit} className="btn bg-white text-sky-300 hover:bg-white border-blue-300">
+            <img className="w-10 h-10" src={googleImg} />
+            Login With Google{" "}
+          </button>
+        </div>
+        <p className="text-center py-2">
           Dont Have An Account? Please{" "}
           <Link className="text-red-500" to="/Register">
             Register
           </Link>
         </p>
-        <div className="form-control mt-6">
-          <button className="btn btn-primary">Register </button>
-        </div>
       </form>
     </div>
   );

@@ -3,6 +3,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import googleImg from "../../assets/google.png"
 
 const Register = () => {
   const { createUser, google, updateUserProfile } = useContext(AuthContext);
@@ -20,7 +21,7 @@ const Register = () => {
     const password = form.get("password");
     const name = form.get("name");
     const photo = form.get("photo");
-    const terms = form.get("terms")
+    const terms = form.get("terms");
     const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     console.log(email, password, name);
 
@@ -28,21 +29,20 @@ const Register = () => {
     setError("");
     setSuccess(false);
 
-    if (!passwordValidation.test(password)) {
+    if (!passwordValidation.test(password) || password < 6) {
       toast.error(
-        "password should be At least one upper case one lower case, and numbers"
+        "password must be at least 6 character, At least one upper case one lower case, and numbers"
       );
       return;
     }
 
-    if(password < 6){
-      toast.error('password must be at least 6 character');
+    if (!terms) {
+      toast.error("accept our terms and condition");
       return;
     }
 
-    if(!terms){
-      toast.error('accept our terms and condition')
-      return;
+    if(success){
+      toast.success('Register successful');
     }
 
     createUser(email, password)
@@ -149,21 +149,23 @@ const Register = () => {
           </label>
         </div>
 
-        <p>
+        
+        <div className="form-control mt-6">
+          <button className="btn  bg-sky-300 hover:bg-sky-950 hover:text-white text-black">Register </button>
+        </div>
+        <div className="divider">OR</div>
+        <div className="form-control mt-6">
+        <button onClick={handelGoogleSubmit} className="btn bg-white text-sky-300 hover:bg-white border-blue-300">
+            <img className="w-10 h-10" src={googleImg} />
+            Login With Google{" "}
+          </button>
+        </div>
+        <p className="text-center py-2">
           Already Have An Account? Please{" "}
           <Link className="text-red-500" to="/login">
             log in
           </Link>
         </p>
-        <div className="form-control mt-6">
-          <button className="btn btn-primary">Register </button>
-        </div>
-        <div className="divider">OR</div>
-        <div className="form-control mt-6">
-          <button onClick={handelGoogleSubmit} className="btn btn-primary">
-            Sign in with Google
-          </button>
-        </div>
       </form>
     </div>
   );
