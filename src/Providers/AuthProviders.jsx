@@ -4,6 +4,7 @@ import auth from "../Firebase/FireBaseInit";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   // signInWithEmailAndPassword,
   signInWithPopup,
@@ -25,10 +26,10 @@ const AuthProviders = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const signUpUser = (email, password)=>{
-    setLoading(true)
-    return signInWithEmailAndPassword(auth,email, password);
-  }
+  const signUpUser = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   const google = () => {
     setLoading(true);
@@ -43,6 +44,10 @@ const AuthProviders = ({ children }) => {
   const logOutUser = () => {
     setLoading(true);
     return signOut(auth);
+  };
+
+  const forgetPass = (email) => {
+    return sendPasswordResetEmail(auth, email);
   };
 
   useEffect(() => {
@@ -62,7 +67,8 @@ const AuthProviders = ({ children }) => {
     updateUserProfile,
     user,
     logOutUser,
-    loading
+    loading,
+    forgetPass
   };
 
   return (

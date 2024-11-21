@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const TopBrandsCard = ({ brand }) => {
   const { brand_logo, brand_name } = brand;
+
   return (
     <Link to="/brandDetails" className="card rounded-none bg-white space-y-2 text-black border p-3 transition duration-300 ease-in-out 
     hover:shadow-lg dark:hover:shadow-black/30 border-none">

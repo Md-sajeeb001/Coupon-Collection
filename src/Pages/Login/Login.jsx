@@ -94,9 +94,9 @@ const Login = () => {
             {showPass ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
           </Link>
           <label className="label">
-            <a href="#" className="label-text-alt link link-hover">
+            <Link to="/forgetPassword" href="#" className="label-text-alt link link-hover">
               Forgot password?
-            </a>
+            </Link>
           </label>
         </div>
         <div className="form-control mt-6">
@@ -104,7 +104,7 @@ const Login = () => {
         </div>
         <div className="divider">OR</div>
         <div className="form-control mt-6">
-          <button onClick={handelGoogleSubmit} className="btn bg-white text-sky-300 hover:bg-white border-blue-300">
+          <button onClick={handelGoogleSubmit} className="btn bg-white text-black hover:bg-white border-blue-300">
             <img className="w-10 h-10" src={googleImg} />
             Login With Google{" "}
           </button>

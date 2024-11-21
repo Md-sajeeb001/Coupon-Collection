@@ -1,9 +1,13 @@
 /* eslint-disable react/prop-types */
 
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import Modal from "../../Components/Modal/Modal";
 
 const BrandsCard = ({ brand }) => {
   const { brand_logo, brand_name, description, rating, isSaleOn, _id } = brand;
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="page-container max-w-3xl mx-auto border rounded-lg p-6 px-4 py-4">
       <div className="card-section space-y-4">
@@ -31,11 +35,12 @@ const BrandsCard = ({ brand }) => {
                 <span className="animate__animated animate__bounce animate__infinite text-sm font-bold text-center pb-6 text-green-500 ">
                   Sale is On!
                 </span>
-                <Link to={`/brandDetails/${_id}`} className="btn px-8 bg-sky-300 hover:bg-sky-700 text-black">
+                <Link onClick={()=> setShowModal(true)} to={`/brandDetails/${_id}`} className="btn px-8 bg-sky-300 hover:bg-sky-700 text-black">
                   View Coupons
                 </Link>
               </div>
             )}
+            {showModal && <Modal></Modal>}
           </div>
         </div>
       </div>

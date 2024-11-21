@@ -8,11 +8,14 @@ import Register from "../Pages/Register/Register";
 import PrivetRoute from "./PrivetRoute";
 import MyProfile from "../Components/MyProfile/MyProfile";
 import UpDateProfile from "../Pages/upDateProfile/upDateProfile";
+import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
+// import ErrorPage from "../Components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    // errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -49,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/Register",
         element: <Register></Register>,
+      },
+      {
+        path: "/forgetPassword",
+        element: <ForgetPassword></ForgetPassword>,
       },
       {
         path: "/myprofile",
