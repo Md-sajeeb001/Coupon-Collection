@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ForgetPassword = () => {
   const { forgetPass } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handelForgetPass = (e) => {
     e.preventDefault();
@@ -13,6 +15,7 @@ const ForgetPassword = () => {
     forgetPass(email)
       .then((result) => {
         console.log(result);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);

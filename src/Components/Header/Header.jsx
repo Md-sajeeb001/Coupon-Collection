@@ -49,6 +49,9 @@ const Header = () => {
             <NavLink className="text-black font-semibold" to="/myprofile">
               My-Profile
             </NavLink>
+            <NavLink className="text-black font-semibold" to="/about">
+              About Us
+            </NavLink>
           </ul>
         </div>
         <Link to="/">
@@ -66,6 +69,9 @@ const Header = () => {
           <NavLink className="text-black font-semibold" to="/myprofile">
             My-Profile
           </NavLink>
+          <NavLink className="text-black font-semibold" to="/about">
+              About Us
+            </NavLink>
         </ul>
       </div>
 

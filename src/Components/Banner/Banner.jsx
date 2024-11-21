@@ -11,7 +11,7 @@ const Banner = () => {
     <div>
       {user && (
         <div className="pt-10 text-center text-xl font-bold">
-          {user && <h2 className="underline ">{user.displayName}</h2>}
+          {user && <h2 className="underline ">Hi, Welcome {user.displayName}</h2>}
         </div>
       )}
       <div className="carousel w-full h-[400px] object-cover rounded-lg my-8">

@@ -13,13 +13,13 @@ const BrandsCard = ({ brand }) => {
       <div className="card-section space-y-4">
         <div className="flex items-center justify-between brand-card bg-base-100 shadow-lg p-4 rounded-lg">
 
-          <div className="card-header flex flex-col ">
+          <div className="card-header flex flex-col">
             <img
               src={brand_logo}
               className="w-40 h-28 border rounded-md p-4 object-contain"
             />
             <div className="text-sm font-medium flex flex-col pt-4 space-x-1 space-y-3">
-             <h3 className="text-2xl font-bold">{brand_name}</h3>
+             <h3 className="sm:text-2xl text-lg font-bold">{brand_name}</h3>
               <div>
               <span className="text-yellow-500 mr-3">⭐⭐⭐⭐</span>
               <span>{rating}</span>
@@ -31,11 +31,11 @@ const BrandsCard = ({ brand }) => {
 
           <div className="card-footer mt-4 flex flex-col">
             {isSaleOn && (
-              <div className="flex flex-col" >
+              <div className="flex flex-col sm:w-56 w-40" >
                 <span className="animate__animated animate__bounce animate__infinite text-sm font-bold text-center pb-6 text-green-500 ">
                   Sale is On!
                 </span>
-                <Link onClick={()=> setShowModal(true)} to={`/brandDetails/${_id}`} className="btn px-8 bg-sky-300 hover:bg-sky-700 text-black">
+                <Link onClick={()=> setShowModal(true)} to={`/brandDetails/${_id}`} className="btn sm:px-8 bg-sky-300 hover:bg-sky-700 text-black">
                   View Coupons
                 </Link>
               </div>

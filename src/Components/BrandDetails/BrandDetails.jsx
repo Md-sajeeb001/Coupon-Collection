@@ -20,15 +20,15 @@ const BrandDetails = () => {
   return (
     <div className="page-container">
       <div>
-        <div className=" flex items-center bg-white w-full px-10 py-8">
+        <div className=" sm:flex sm:items-center space-y-3 bg-white sm:w-full sm:px-10 sm:py-8 p-4">
           <img
             src={brand_logo}
             alt={`${brand_name} Logo`}
-            className="w-[300px] h-28 object-fill mr-20"
+            className="sm:w-[300px] w-40 h-14 sm:h-28 object-fill sm:mr-20"
           />
-          <h1 className="text-3xl font-bold mr-8">{brand_name}</h1>
-          <p className="text-black bg-yellow-400 px-3 py-2 rounded-full">
-            ⭐ {rating}
+          <h1 className="sm:text-3xl text-lg font-bold mr-8">{brand_name}</h1>
+          <p className="text-black bg-yellow-400 sm:px-3 sm:py-2 rounded-full w-20 h-9 gap-2 flex items-center justify-center">
+            <span>⭐</span> <span>{rating}</span>
           </p>
         </div>
         {/* <button>{coupons[0]?.coupon_code}</button> */}

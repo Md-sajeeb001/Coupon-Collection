@@ -9,13 +9,14 @@ import PrivetRoute from "./PrivetRoute";
 import MyProfile from "../Components/MyProfile/MyProfile";
 import UpDateProfile from "../Pages/upDateProfile/upDateProfile";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
-// import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import About from "../Components/About/About";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    // errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
       },
+      {
+        path: "/about",
+        element: <About></About>
+      }
     ],
   },
 ]);

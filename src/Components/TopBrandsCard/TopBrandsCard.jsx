@@ -6,8 +6,7 @@ const TopBrandsCard = ({ brand }) => {
   const { brand_logo, brand_name } = brand;
 
   return (
-    <Link to="/brandDetails" className="card rounded-none bg-white space-y-2 text-black border p-3 transition duration-300 ease-in-out 
-    hover:shadow-lg dark:hover:shadow-black/30 border-none">
+    <Link className="card rounded-none bg-white space-y-2 text-black border p-3">
       <figure className="w-40 h-40 mx-auto object-cover">
         <img src={brand_logo} alt="Shoes" />
       </figure>
