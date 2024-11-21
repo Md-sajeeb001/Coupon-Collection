@@ -1,18 +1,28 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import logo from "../../assets/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
+import { toast } from "react-toastify";
 
 const Header = () => {
   const { user, logOutUser } = useContext(AuthContext);
+  const [success, setSuccess] = useState(false);
+  const [showError, setShowError] = useState("");
+  
 
   const handelLogOut = () => {
     logOutUser()
       .then((result) => {
-        console.log(result);
+        setSuccess(result);
+        if(success){
+          toast.success('user log out successful')
+        }
       })
       .catch((error) => {
-        console.log(error);
+        setShowError(error)
+        if(showError){
+          toast.error(error.message)
+        }
       });
   };
 

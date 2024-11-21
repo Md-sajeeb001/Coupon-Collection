@@ -14,13 +14,10 @@ const UpDateProfile = () => {
     const photo = form.get("photo");
 
     updateUserProfile({ displayName: name, photoURL: photo })
-      .than((result) => {
-        console.log(result);
+      .than(() => {
         navigate("/");
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch(() => {});
   };
 
   return (
@@ -51,7 +48,9 @@ const UpDateProfile = () => {
             required
           />
         </div>
-        <Link to="/" className="btn">Update Profile</Link>
+        <Link to="/" className="btn">
+          Update Profile
+        </Link>
       </form>
     </div>
   );

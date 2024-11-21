@@ -15,7 +15,7 @@ const BrandDetails = () => {
   }, [data, id]);
 
   const { rating, brand_name, brand_logo, shop_Link } = brand;
-  console.log(brand);
+
 
   return (
     <div className="page-container">

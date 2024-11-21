@@ -23,7 +23,7 @@ const Register = () => {
     const photo = form.get("photo");
     const terms = form.get("terms");
     const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-    console.log(email, password, name);
+
 
     // reset state
     setError("");
@@ -47,7 +47,7 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        console.log(result);
+
         setSuccess(result);
         e.target.reset();
 
@@ -57,11 +57,13 @@ const Register = () => {
             navigate("/");
           })
           .catch((error) => {
-            console.log(error);
+            setError(error)
+            if(err){
+              toast.error(error.message)
+            }
           });
       })
       .catch((error) => {
-        console.log(error.message);
         setError(error.message);
         toast.error(error.message);
       });
@@ -70,13 +72,12 @@ const Register = () => {
   const handelGoogleSubmit = () => {
     google()
       .then((result) => {
-        console.log(result);
+
         setSuccess(result);
         navigate("/");
       })
       .catch((error) => {
-        console.log(error.message);
-        setError(err.message);
+        setError(error);
       });
   };
 

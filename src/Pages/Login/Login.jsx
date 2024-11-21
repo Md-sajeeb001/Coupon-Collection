@@ -20,8 +20,8 @@ const Login = () => {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    if(password < 6){
-      toast.error("password must be at least 6 character")
+    if (password < 6) {
+      toast.error("password must be at least 6 character");
     }
 
     // reset state
@@ -30,33 +30,30 @@ const Login = () => {
 
     signUpUser(email, password)
       .then((result) => {
-        console.log(result);
         setSuccess(result);
-        if (success) {
+
           navigate("/");
-        }
+
       })
       .catch((error) => {
-        console.log(error.message);
         setError(error.message);
         if (err) {
           return toast.error("register now");
         }
       });
-
-    console.log(email, password);
   };
 
   const handelGoogleSubmit = () => {
     google()
       .then((result) => {
-        console.log(result);
         setSuccess(result);
         navigate("/");
+        if (success) {
+          toast.success("user log out successful");
+        }
       })
       .catch((error) => {
-        console.log(error.message);
-        setError(err.message);
+        setError(error.message);
       });
   };
 
@@ -94,17 +91,26 @@ const Login = () => {
             {showPass ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
           </Link>
           <label className="label">
-            <Link to="/forgetPassword" href="#" className="label-text-alt link link-hover">
+            <Link
+              to="/forgetPassword"
+              href="#"
+              className="label-text-alt link link-hover"
+            >
               Forgot password?
             </Link>
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn bg-sky-300 hover:bg-sky-950 hover:text-white text-black">Log in </button>
+          <button className="btn bg-sky-300 hover:bg-sky-950 hover:text-white text-black">
+            Log in{" "}
+          </button>
         </div>
         <div className="divider">OR</div>
         <div className="form-control mt-6">
-          <button onClick={handelGoogleSubmit} className="btn bg-white text-black hover:bg-white border-blue-300">
+          <button
+            onClick={handelGoogleSubmit}
+            className="btn bg-white text-black hover:bg-white border-blue-300"
+          >
             <img className="w-10 h-10" src={googleImg} />
             Login With Google{" "}
           </button>

@@ -13,13 +13,10 @@ const ForgetPassword = () => {
     const email = form.get("email");
 
     forgetPass(email)
-      .then((result) => {
-        console.log(result);
+      .then(() => {
         navigate("/");
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch(() => {});
   };
 
   return (
