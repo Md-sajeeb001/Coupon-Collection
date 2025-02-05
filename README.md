@@ -50,14 +50,22 @@ Currently, the coupons are non-functional, but exciting improvements are planned
 
 ### ⚙️ How to Run the Project Locally
 ## 1️⃣ Clone the Repository
+
 <br/>
-git clone `https://github.com/your-username/coupon-collection.git`
+
+git clone `https://github.com/Md-sajeeb001/Coupon-Collection.git`
 cd coupon-collection
+
 <br/>
+
 ## 2️⃣ Install Dependencies
+
 `npm install`
+
 <br/>
+
 ## 3️⃣ Run the Project 🚀
+
 `npm run dev`
 
 
