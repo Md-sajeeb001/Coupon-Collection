@@ -38,26 +38,6 @@ Currently, the coupons are non-functional, but exciting improvements are planned
    - Allow users to search for coupons based on categories or store names.  
    - Add sorting options (e.g., highest discount, most popular).
   
-7. 2️⃣ Install Dependencies
-Frontend
-cd client
-`npm install`
-
-Backend
-cd server
-`npm install`
-
-3️⃣ Run the Project
-Start Backend Server
-
-cd server
-npm run dev
-Start Frontend Server
-
-cd client
-`npm run start`
-After running both servers, open `http://localhost:8000` in your browser. 🚀
-
 ## 📦 Dependencies  
 - `react`  
 - `react-dom`  
@@ -67,4 +47,17 @@ After running both servers, open `http://localhost:8000` in your browser. 🚀
 - `express`  
 - `mongoose`  
 - `jsonwebtoken`
+
+### ⚙️ How to Run the Project Locally
+## 1️⃣ Clone the Repository
+<br/>
+git clone `https://github.com/your-username/coupon-collection.git`
+cd coupon-collection
+<br/>
+## 2️⃣ Install Dependencies
+`npm install`
+<br/>
+## 3️⃣ Run the Project 🚀
+`npm run dev`
+
 
