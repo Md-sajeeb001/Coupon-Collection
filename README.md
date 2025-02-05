@@ -36,7 +36,27 @@ Currently, the coupons are non-functional, but exciting improvements are planned
 
 6. **Search and Filters:**  
    - Allow users to search for coupons based on categories or store names.  
-   - Add sorting options (e.g., highest discount, most popular).  
+   - Add sorting options (e.g., highest discount, most popular).
+  
+7. 2️⃣ Install Dependencies
+Frontend
+cd client
+`npm install`
+
+Backend
+cd server
+`npm install`
+
+3️⃣ Run the Project
+Start Backend Server
+
+cd server
+npm run dev
+Start Frontend Server
+
+cd client
+`npm run start`
+After running both servers, open `http://localhost:8000` in your browser. 🚀
 
 ## 📦 Dependencies  
 - `react`  
