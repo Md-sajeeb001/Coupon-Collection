@@ -46,5 +46,5 @@ Currently, the coupons are non-functional, but exciting improvements are planned
 - `node`  
 - `express`  
 - `mongoose`  
+- `jsonwebtoken`
 
-- `jsonwebtoken`  
